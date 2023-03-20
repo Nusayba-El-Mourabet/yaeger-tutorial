@@ -12,14 +12,13 @@ import javafx.scene.text.FontWeight;
 
 public class StartButton extends TextEntity implements MouseButtonPressedListener {
 
-    private TitleScene titleScene;
+    private final Waterworld waterworld;
 
-    //    }
-    public StartButton(Coordinate2D initialLocation, TitleScene titleScene){
-        super(initialLocation,"Play game");
-        setFill(Color.LIGHTBLUE);
-        setFont(Font.font("Roboto", FontWeight.BOLD, 40));
-        this.titleScene = titleScene;
+    public StartButton(Coordinate2D initialPosition, Waterworld waterworld) {
+        super(initialPosition, "Play game");
+        this.waterworld = waterworld;
+        setFill(Color.ORANGE);
+        setFont(Font.font("Roboto", FontWeight.BOLD, 30));
 
     }
 
