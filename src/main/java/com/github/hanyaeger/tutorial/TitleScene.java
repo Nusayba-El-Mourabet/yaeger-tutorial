@@ -35,7 +35,7 @@ public class TitleScene extends StaticScene {
         addEntity(waterworldText);
 
         var startButton = new StartButton(
-                new Coordinate2D(getWidth() / 2, getHeight() / 4*2.5), this);
+                new Coordinate2D(getWidth() / 2, getHeight() / 4*2.5), waterworld);
         addEntity(startButton);
     }
 }
