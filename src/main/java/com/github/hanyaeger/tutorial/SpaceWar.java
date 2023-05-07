@@ -4,14 +4,14 @@ import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.tutorial.scenes.GameLevel;
 
-public class Waterworld extends YaegerGame {
+public class SpaceWar extends YaegerGame {
     public static void main(String[] args){
         launch(args);
     }
 
     @Override
     public void setupGame() {
-        setGameTitle("Waterworld");
+        setGameTitle("Space War");
         setSize(new Size(800, 600));
     }
 

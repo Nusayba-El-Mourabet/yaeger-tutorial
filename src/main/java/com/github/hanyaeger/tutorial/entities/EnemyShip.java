@@ -5,9 +5,9 @@ import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 
-public class Swordfish extends DynamicSpriteEntity implements SceneBorderCrossingWatcher {
-    public Swordfish(Coordinate2D location){
-        super("sprites/swordfish.png", location);
+public class EnemyShip extends DynamicSpriteEntity implements SceneBorderCrossingWatcher {
+    public EnemyShip(Coordinate2D location){
+        super("sprites/enemy spaceship.png", location);
         setMotion(2, 270d);
 
     }

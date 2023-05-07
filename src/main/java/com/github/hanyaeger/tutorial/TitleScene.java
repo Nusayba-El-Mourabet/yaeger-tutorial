@@ -11,31 +11,31 @@ import javafx.scene.text.FontWeight;
 
 public class TitleScene extends StaticScene {
 
-    private Waterworld waterworld;
+    private SpaceWar spacewar;
 
-    public TitleScene(Waterworld waterworld){
-        this.waterworld = waterworld;
+    public TitleScene(SpaceWar spacewar){
+        this.spacewar = spacewar;
     }
 
     @Override
     public void setupScene(){
         setBackgroundAudio("audio/ocean.mp3");
-        setBackgroundImage("backgrounds/background1.jpg");
+        setBackgroundImage("backgrounds/start page galaxy.png");
     }
 
     @Override
     public void setupEntities() {
-        var waterworldText = new TextEntity(
+        var spacewarText = new TextEntity(
                 new Coordinate2D(getWidth() / 2, getHeight() / 2),
-                "Waterworld"
+                "Space War"
         );
-        waterworldText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
-        waterworldText.setFill(Color.LIGHTBLUE);
-        waterworldText.setFont(Font.font("Roboto", FontWeight.BOLD, 80));
-        addEntity(waterworldText);
+        spacewarText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+        spacewarText.setFill(Color.LIGHTBLUE);
+        spacewarText.setFont(Font.font("Roboto", FontWeight.BOLD, 80));
+        addEntity(spacewarText);
 
         var startButton = new StartButton(
-                new Coordinate2D(getWidth() / 2, getHeight() / 4*2.5), waterworld);
+                new Coordinate2D(getWidth() / 2, getHeight() / 4*2.5), spacewar);
         addEntity(startButton);
     }
 }
