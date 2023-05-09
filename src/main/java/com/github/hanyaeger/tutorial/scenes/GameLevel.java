@@ -5,8 +5,9 @@ import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.tutorial.entities.EnemyShip;
 import com.github.hanyaeger.tutorial.entities.PlayerShip;
 import com.github.hanyaeger.tutorial.entities.buttons.StartButton;
+import com.github.hanyaeger.tutorial.entities.text.HealthText;
 
-public class GameLevel extends DynamicScene {
+public class GameLevel extends DynamicScene  {
     @Override
     public void setupScene() {
         setBackgroundAudio("audio/waterworld.mp3");
@@ -19,5 +20,7 @@ public class GameLevel extends DynamicScene {
         addEntity(enemyship);
         var playership = new PlayerShip(new Coordinate2D(0, getHeight() / 2));
         addEntity(playership);
+        var healthtext = new HealthText(new Coordinate2D(0, 10));
+        addEntity(healthtext);
     }
 }

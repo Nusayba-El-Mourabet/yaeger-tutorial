@@ -7,14 +7,21 @@ import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.tutorial.SpaceWar;
+import com.github.hanyaeger.tutorial.entities.text.HealthText;
 import javafx.scene.input.KeyCode;
 
 import java.util.Random;
 import java.util.Set;
 
 public class PlayerShip extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener, SceneBorderTouchingWatcher, Collided, Collider {
+    private HealthText healthText ;
+    private int health = 3;
+
     public PlayerShip(Coordinate2D location) {
         super("sprites/playership.png", location, new Size(80, 80), 1, 1);
+        this.healthText = new HealthText(new Coordinate2D(0, 10));
+        healthText.setText(String.valueOf(health));
+
     }
 
     @Override
@@ -52,7 +59,17 @@ public class PlayerShip extends DynamicSpriteEntity implements SceneBorderCrossi
     @Override
     public void onCollision(Collider collidingObject) {
         if (collidingObject instanceof EnemyShip) {
-            System.out.println("Collision!");        }
+            System.out.println("Collision!");
+        }
+        healthText.setText(String.valueOf(--health));
+
+        if (health == 0) {
+            System.out.println("Game Over!");
+        } else {
+            setAnchorLocation(new Coordinate2D(0, new Random().nextInt((int) (getSceneHeight() - getHeight()))));
+
+        }
     }
 }
+
 
