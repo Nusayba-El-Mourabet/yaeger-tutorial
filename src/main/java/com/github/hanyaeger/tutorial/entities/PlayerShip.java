@@ -17,12 +17,10 @@ public class PlayerShip extends DynamicSpriteEntity implements SceneBorderCrossi
     private HealthText healthText ;
     private int health = 3;
 
-    public PlayerShip(Coordinate2D location) {
+    public PlayerShip(Coordinate2D location, HealthText healthText) {
         super("sprites/playership.png", location, new Size(80, 80), 1, 1);
-        this.healthText = new HealthText(new Coordinate2D(0, 10));
-        healthText.setText(String.valueOf(health));
-
-    }
+        this.healthText = healthText;
+        healthText.setHealthText(health);    }
 
     @Override
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
@@ -61,8 +59,7 @@ public class PlayerShip extends DynamicSpriteEntity implements SceneBorderCrossi
         if (collidingObject instanceof EnemyShip) {
             System.out.println("Collision!");
         }
-        healthText.setText(String.valueOf(--health));
-
+        healthText.setHealthText(--health);
         if (health == 0) {
             System.out.println("Game Over!");
         } else {

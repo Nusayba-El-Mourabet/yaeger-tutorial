@@ -16,11 +16,13 @@ public class GameLevel extends DynamicScene  {
 
     @Override
     public void setupEntities() {
+        var healthText = new HealthText(new Coordinate2D(400, 10));
+        addEntity(healthText);
+
         var enemyship = new EnemyShip(new Coordinate2D(getWidth() / 2, getHeight() / 2));
         addEntity(enemyship);
-        var playership = new PlayerShip(new Coordinate2D(0, getHeight() / 2));
+
+        var playership = new PlayerShip(new Coordinate2D(0, getHeight() / 2), healthText);
         addEntity(playership);
-        var healthtext = new HealthText(new Coordinate2D(0, 10));
-        addEntity(healthtext);
     }
 }
