@@ -13,6 +13,7 @@ public class EnemyShip extends DynamicSpriteEntity implements SceneBorderCrossin
     }
     @Override
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
+
         setAnchorLocationX(getSceneWidth());
     }
 }

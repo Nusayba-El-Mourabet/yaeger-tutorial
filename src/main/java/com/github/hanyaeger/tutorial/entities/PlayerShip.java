@@ -9,9 +9,10 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.tutorial.SpaceWar;
 import javafx.scene.input.KeyCode;
 
+import java.util.Random;
 import java.util.Set;
 
-public class PlayerShip extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener, SceneBorderTouchingWatcher {
+public class PlayerShip extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener, SceneBorderTouchingWatcher, Collided, Collider {
     public PlayerShip(Coordinate2D location) {
         super("sprites/playership.png", location, new Size(80, 80), 1, 1);
     }
@@ -47,4 +48,11 @@ public class PlayerShip extends DynamicSpriteEntity implements SceneBorderCrossi
                 break;
         }
     }
+
+    @Override
+    public void onCollision(Collider collidingObject) {
+        if (collidingObject instanceof EnemyShip) {
+            System.out.println("Collision!");        }
+    }
 }
+
