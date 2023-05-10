@@ -3,6 +3,7 @@ package com.github.hanyaeger.tutorial;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.tutorial.scenes.GameLevel;
+import com.github.hanyaeger.tutorial.scenes.GameOverScene;
 
 public class SpaceWar extends YaegerGame {
     public static void main(String[] args){
@@ -20,6 +21,7 @@ public class SpaceWar extends YaegerGame {
     public void setupScenes() {
         addScene(0, new TitleScene(this));
         addScene(1, new GameLevel());
+        addScene(2, new GameOverScene(this));
 
     }
 }

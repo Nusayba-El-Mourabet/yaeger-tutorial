@@ -22,7 +22,7 @@ public class GameLevel extends DynamicScene  {
         var enemyship = new EnemyShip(new Coordinate2D(getWidth() / 2, getHeight() / 2));
         addEntity(enemyship);
 
-        var playership = new PlayerShip(new Coordinate2D(0, getHeight() / 2), healthText);
+        var playership = new PlayerShip(new Coordinate2D(0, getHeight() / 2), healthText, this);
         addEntity(playership);
     }
 }
