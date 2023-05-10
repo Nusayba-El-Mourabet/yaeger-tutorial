@@ -13,14 +13,14 @@ public class SpaceWar extends YaegerGame {
     @Override
     public void setupGame() {
         setGameTitle("Space War");
-        setSize(new Size(800, 600));
+        setSize(new Size(850, 600));
     }
 
 
     @Override
     public void setupScenes() {
         addScene(0, new TitleScene(this));
-        addScene(1, new GameLevel());
+        addScene(1, new GameLevel(this));
         addScene(2, new GameOverScene(this));
 
     }

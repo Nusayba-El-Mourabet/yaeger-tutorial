@@ -23,6 +23,20 @@ public class GameOverScene extends StaticScene {
 
     @Override
     public void setupEntities() {
+        var gameOverText = new TextEntity(new Coordinate2D(getWidth() / 2, getHeight() / 2), "Game Over");
+        gameOverText.setAnchorPoint(AnchorPoint.BOTTOM_CENTER);
+        gameOverText.setFill(Color.WHITE);
+        gameOverText.setFont(Font.font("Roboto", FontWeight.BOLD, 80));
+        addEntity(gameOverText);
+
+        var playGamButton = new StartButton(new Coordinate2D((getWidth() / 2) - 20, getHeight() / 2), spacewar);
+        playGamButton.setAnchorPoint(AnchorPoint.TOP_RIGHT);
+        addEntity(playGamButton);
+
+
+        var exitGameButton = new QuitButton(new Coordinate2D((getWidth() / 2) + 20, getHeight() / 2), waterworld);
+        exitGameButton.setAnchorPoint(AnchorPoint.TOP_LEFT);
+        addEntity(exitGameButton);
 
     }
 }

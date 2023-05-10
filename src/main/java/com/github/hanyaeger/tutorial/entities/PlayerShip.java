@@ -17,7 +17,7 @@ import java.util.Set;
 public class PlayerShip extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener, SceneBorderTouchingWatcher, Collided, Collider {
     private HealthText healthText ;
     private int health = 3;
-    private SpaceWar spacewar;
+    private final SpaceWar spacewar;
 
     public PlayerShip(final Coordinate2D location, final HealthText healthText, final SpaceWar spacewar) {
         super("sprites/playership.png", location, new Size(80, 80), 1, 1);
@@ -69,7 +69,6 @@ public class PlayerShip extends DynamicSpriteEntity implements SceneBorderCrossi
             this.spacewar.setActiveScene(2);
         } else {
             setAnchorLocation(new Coordinate2D(0, new Random().nextInt((int) (getSceneHeight() - getHeight()))));
-
         }
     }
 }
