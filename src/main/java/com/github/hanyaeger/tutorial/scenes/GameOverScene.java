@@ -5,6 +5,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import com.github.hanyaeger.tutorial.SpaceWar;
+import com.github.hanyaeger.tutorial.entities.buttons.QuitButton;
 import com.github.hanyaeger.tutorial.entities.buttons.StartButton;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -34,7 +35,7 @@ public class GameOverScene extends StaticScene {
         addEntity(playGamButton);
 
 
-        var exitGameButton = new QuitButton(new Coordinate2D((getWidth() / 2) + 20, getHeight() / 2), waterworld);
+        var exitGameButton = new QuitButton(new Coordinate2D((getWidth() / 2) + 20, getHeight() / 2), spacewar);
         exitGameButton.setAnchorPoint(AnchorPoint.TOP_LEFT);
         addEntity(exitGameButton);
 
