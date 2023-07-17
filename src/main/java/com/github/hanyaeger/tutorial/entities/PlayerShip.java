@@ -7,7 +7,7 @@ import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.tutorial.SpaceWar;
-import com.github.hanyaeger.tutorial.entities.Enemy.EnemyShip;
+import com.github.hanyaeger.tutorial.entities.enemy.EnemyShip;
 import com.github.hanyaeger.tutorial.entities.text.HealthText;
 import javafx.scene.input.KeyCode;
 
