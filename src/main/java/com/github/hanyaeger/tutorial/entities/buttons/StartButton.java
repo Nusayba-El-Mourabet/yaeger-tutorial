@@ -6,8 +6,6 @@ import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import com.github.hanyaeger.api.userinput.MouseEnterListener;
 import com.github.hanyaeger.api.userinput.MouseExitListener;
 import com.github.hanyaeger.tutorial.SpaceWar;
-import com.github.hanyaeger.tutorial.TitleScene;
-import com.github.hanyaeger.tutorial.SpaceWar;
 import javafx.scene.Cursor;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
@@ -28,7 +26,7 @@ public class StartButton extends TextEntity implements MouseButtonPressedListene
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        spacewar.setActiveScene(1); // switch to the GameLevel scene
+        spacewar.setActiveScene(spacewar.getGamescene()); // switch to the GameLevel scene
     }
 
     @Override

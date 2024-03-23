@@ -16,7 +16,7 @@ public class GameLevel extends DynamicScene{
 
     @Override
     public void setupScene() {
-        setBackgroundAudio("audio/waterworld.mp3");
+        setBackgroundAudio("audio/spaceship-cruising-ufo-7176.mp3");
         setBackgroundImage("backgrounds/galaxy.png");
     }
 

@@ -36,9 +36,9 @@ public class PlayerShip extends DynamicSpriteEntity implements SceneBorderCrossi
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
 
         if (pressedKeys.contains(KeyCode.UP)) {
-            setMotion(3, 180d);
+            setMotion(3, Direction.UP);
         } else if (pressedKeys.contains(KeyCode.DOWN)) {
-            setMotion(3, 0d);
+            setMotion(3, Direction.DOWN);
         } else if (pressedKeys.isEmpty()) {
             setSpeed(0);
         }
@@ -63,10 +63,11 @@ public class PlayerShip extends DynamicSpriteEntity implements SceneBorderCrossi
     public void onCollision(Collider collidingObject) {
         if (collidingObject instanceof EnemyShip) {
             System.out.println("Collision!");
+            //TODO:
         }
         healthText.setHealthText(--health);
         if (health == 0) {
-            this.spacewar.setActiveScene(2);
+            this.spacewar.setActiveScene(spacewar.getGamaOverscene());
         } else {
             setAnchorLocation(new Coordinate2D(0, new Random().nextInt((int) (getSceneHeight() - getHeight()))));
         }
